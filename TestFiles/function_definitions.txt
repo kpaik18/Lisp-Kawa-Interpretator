@@ -1,0 +1,5 @@
+(define (size seq) (if (null? seq) 0 (+ 1 (size (cdr seq)))))
+(define (all-positive seq) (cond ((null? seq) #t) ((<= (car seq) 0) #f) (else (all-positive (cdr seq)))))
+(define (increment seq a) (map (lambda (x) (+ x a)) seq))
+(define (first seq) (car seq))
+(define (first-elems seq) (map first seq))
